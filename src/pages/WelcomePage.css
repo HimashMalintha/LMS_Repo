@@ -1,0 +1,93 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trispace', sans-serif; /* Font set to Trispace */
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.welcome-header {
+  background-color: #d7f0c4; /* Green background */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Align logo left, logout right */
+  align-items: center;
+}
+
+.logo {
+  max-width: 250px; /* Adjust the logo size */
+  height: auto;
+}
+
+.logout-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Trispace', sans-serif;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #333;
+}
+
+.welcome-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-family: 'Trispace', sans-serif;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.options-container {
+  display: flex;
+  gap: 20px;
+}
+
+.option-card {
+  background-color: #eaeaea;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 250px;
+  text-align: center;
+  font-family: 'Trispace', sans-serif;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+}
+
+.option-card h3 {
+  font-size: 18px;
+  color: #333;
+}

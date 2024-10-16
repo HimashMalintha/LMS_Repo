@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trispace', sans-serif;  /* Applied Trispace font globally */
+  background-color: #f9f9f9;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.image-section {
+  flex: 1;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.login-logo {
+  width: 750px;  /* Increased from 150px to 750px */
+  height: auto;  /* Ensures the logo maintains its aspect ratio */
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: 'Trispace', sans-serif;  /* Applied Trispace font to the heading */
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'Trispace', sans-serif;  /* Applied Trispace font to paragraph */
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: 'Trispace', sans-serif;  /* Applied Trispace font to labels */
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  font-family: 'Trispace', sans-serif;  /* Applied Trispace font to button */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.submit-btn:hover {
+  background-color: #333;
+}

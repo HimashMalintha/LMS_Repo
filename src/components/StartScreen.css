@@ -1,0 +1,129 @@
+body {
+    background-color: #E5E4E2;
+  }
+  
+  .start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .start-screen h1 {
+    font-size: 2em;
+  }
+  
+  .start-screen h2 {
+    font-size: 1.5em;
+  }
+  
+  .start-screen .highlight {
+    color: green;
+  }
+  
+  .start-screen hr {
+    width: 80%;
+    border: 1px solid black;
+    margin: 20px 0;
+  }
+  
+  .start-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+  
+  .start-button:hover {
+    background-color: #555555;
+  }
+  
+  .start-button .arrow {
+    margin-left: 10px;
+    font-size: 1.5em;
+  }
+  
+  .loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 3em;
+  }
+  
+  .rotating-icon {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #333; /* Dark grey */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E5E4E2;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .answers button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answers button:hover {
+    background-color: #555555;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #555555;
+  }
+  
+  h1, h2 {
+    font-family: Arial, sans-serif;
+  }
+  
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+  }
+  
