@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { appendChosenSubGroup, setQuestionnaire } from '../redux/Quiz/slices/quizSlice';
-import '../App.css'; // Importing the CSS file if needed
+import '../Ashen.css'; // Importing the CSS file if needed
 import axios from 'axios';
 import { submitQuiz, updateQuizTaken } from '../redux/Quiz/actions/quizAction';
 

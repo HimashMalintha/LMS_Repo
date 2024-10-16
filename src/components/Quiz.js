@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchQuestions } from '../redux/Quiz/actions/quizAction';
 import { handleAnswer, nextQuestion, previousQuestion, setCountdown, setLoading, setQuestionnaire } from '../redux/Quiz/slices/quizSlice';
-import '../App.css'; // Importing the CSS file if needed
+import '../Ashen.css'; // Importing the CSS file if needed
 
 const Quiz = () => {
   const dispatch = useDispatch();
