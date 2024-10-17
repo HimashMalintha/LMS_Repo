@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import './Field.css'; // Assuming you're using CSS for styling
 import logo from '../assets/knowledgeconnect-logo.jpeg'; // Ensure this path is correct
 import studentImage from '../assets/student-thinking.jpeg'; // Add the correct path for your image
+import axios from 'axios'; // Import Axios
 
 function Field() {
   const [grades, setGrades] = useState({
-    programming: '',
-    math: '',
-    systems: '',
-    webTech: '',
-    oop: '',
-    dbms: '',
-    stats: '',
-    mobileDev: '',
-    dsa: ''
+    introProg: '',  // Introduction to Programming
+    oop: '',         // Object Oriented Programming
+    dsa: '',         // Data Structures and Algorithms
+    iwt: '',         // Internet and Web Technologies
+    mad: '',         // Mobile Application Development
+    isdm: '',        // Information Systems and Data Modeling
+    mathComp: '',    // Mathematics for Computing
+    dbms: '',        // Database Management Systems
+    probStat: ''     // Probability and Statistics
   });
+
+  const [result, setResult] = useState(''); // To display the result from the backend
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -24,8 +27,13 @@ function Field() {
     });
   };
 
-  const handleSubmit = () => {
-    console.log('Grades Submitted', grades);
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/check-eligibility', grades);
+      setResult(response.data.message); // Assuming the backend returns a message
+    } catch (error) {
+      console.error('There was an error submitting the grades!', error);
+    }
   };
 
   return (
@@ -63,6 +71,9 @@ function Field() {
               Check
             </button>
           </form>
+
+          {/* Display the result */}
+          {result && <p className="result-message">{result}</p>}
         </div>
       </div>
     </div>
@@ -70,15 +81,15 @@ function Field() {
 }
 
 const subjects = {
-  programming: 'Introduction to Programming',
-  math: 'Mathematics for Computing',
-  systems: 'Information Systems and Data Modeling',
-  webTech: 'Internet and Web Technologies',
+  introProg: 'Introduction to Programming',
   oop: 'Object Oriented Programming',
+  dsa: 'Data Structures and Algorithms',
+  iwt: 'Internet and Web Technologies',
+  mad: 'Mobile Application Development',
+  isdm: 'Information Systems and Data Modeling',
+  mathComp: 'Mathematics for Computing',
   dbms: 'Database Management Systems',
-  stats: 'Probability and Statistics',
-  mobileDev: 'Mobile Application Development',
-  dsa: 'Data Structures and Algorithms'
+  probStat: 'Probability and Statistics'
 };
 
 export default Field;
