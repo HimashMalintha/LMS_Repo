@@ -1,12 +1,22 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import dotenv from 'dotenv'; // For environment variables
+import dbConnect from './dbConnect.js'; // MongoDB connection logic
 
+// Load environment variables from .env file
+dotenv.config(); 
+
+// Initialize the Express app
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
+// Middleware
 app.use(bodyParser.json());
 app.use(cors());
+
+// Connect to MongoDB
+dbConnect();
 
 // Mapping from grades to numerical values
 const gradeMapping = {
