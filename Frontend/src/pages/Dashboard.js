@@ -22,7 +22,7 @@ const Dashboard = () => {
     const dispatch = useDispatch();
     const isLogged = useSelector((state) => state.authentication.isLogged);
     const topics = isLogged ? ["Chat", "Join Group", "Logout"] : ["Login"];
-    const [contentIndex, setContentIndex] = useState(0);
+    const [contentIndex, setContentIndex] = useState("0");
     const [selectedKey, setSelectedKey] = useState("0");
     const [collapsed, setCollapsed] = useState(false); // State for sidebar collapse
 

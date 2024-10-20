@@ -3,6 +3,7 @@ import './Field.css'; // Assuming you're using CSS for styling
 import logo from '../assets/knowledgeconnect-logo.jpeg'; // Ensure this path is correct
 import studentImage from '../assets/student-thinking.jpeg'; // Add the correct path for your image
 import axios from 'axios'; // Import Axios
+import WelcomePage from './WelcomePage';
 
 function Field() {
   const [grades, setGrades] = useState({
@@ -29,7 +30,7 @@ function Field() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/check-eligibility', grades);
+      const response = await axios.post('http://localhost:5050/check-eligibility', grades);
       // Since the backend returns seResult and dsResult, handle both
       const { seResult, dsResult } = response.data;
       setResult(`SE Result: ${seResult}\nDS Result: ${dsResult}`); // Show both results
@@ -47,7 +48,7 @@ function Field() {
           <a href="/">Study Groups</a>
           <a href="/">Field Recommendation</a>
         </nav>
-        <button className="logout-btn">Logout</button>
+        <button className="logout-btn" onClick={() => window.location.href = '/'}>Logout</button>
       </header>
 
       <div className="content">
