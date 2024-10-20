@@ -5,21 +5,26 @@
 }
 
 .App-header {
+  position: fixed; /* Keeps the header on top */
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensures header stays on top */
 }
 
 .App-logo {
-  height: 40px;
+  height: 50px;
 }
 
 nav {
   display: flex;
-  gap: 40px; /* Increased gap for a better layout */
+  gap: 40px;
 }
 
 nav a {
@@ -39,7 +44,7 @@ nav a {
 }
 
 .logout-btn:hover {
-  background-color: #333; /* Darker on hover */
+  background-color: #333;
 }
 
 .content {
@@ -47,35 +52,41 @@ nav a {
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  gap: 80px; /* Increased gap between image and form */
+  gap: 60px; /* Increased gap for a more balanced layout */
   max-width: 1200px;
-  margin: 0 auto; /* Center content */
+  margin: 0 auto;
+  margin-top: 120px; /* Adjusted margin-top to create space under the fixed header */
+}
+
+.image-section {
+  flex: 1; /* Make image section flexible to fill space */
 }
 
 .image-section .student-image {
-  width: 400px;
+  width: 100%;
+  max-width: 400px; /* Maintain a max width */
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-section {
+  flex: 1; /* Make form section flexible to fill space */
   display: flex;
   flex-direction: column;
-  max-width: 500px; /* Restrict form width */
-  width: 100%;
 }
 
 .form-section h2 {
-  margin-bottom: 30px; /* Reduced gap between heading and form */
-  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-size: 2rem; /* Slightly increased font size */
   color: #333;
+  text-align: left; /* Align heading with form */
 }
 
 .grades-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+  gap: 30px; /* Increased gap between form fields */
 }
 
 .input-group {
@@ -84,12 +95,12 @@ nav a {
 }
 
 .input-group label {
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Added margin below labels for spacing */
   font-weight: bold;
   color: #333;
 }
 
-.input-group input {
+.input-group select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -98,16 +109,17 @@ nav a {
 }
 
 .submit-btn {
-  grid-column: span 2; /* Span across both columns */
+  grid-column: span 2; /* Make the submit button span two columns */
   padding: 15px;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   transition: background-color 0.3s ease;
+  margin-top: 20px; /* Added margin above the button */
 }
 
 .submit-btn:hover {
@@ -115,7 +127,7 @@ nav a {
 }
 
 .result-message {
-  grid-column: span 2; /* Span result message across both columns */
+  grid-column: span 2;
   font-size: 1.2rem;
   margin-top: 20px;
   color: green;

@@ -30,9 +30,12 @@ function Field() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post('http://localhost:5000/check-eligibility', grades);
-      setResult(response.data.message); // Assuming the backend returns a message
+      // Since the backend returns seResult and dsResult, handle both
+      const { seResult, dsResult } = response.data;
+      setResult(`SE Result: ${seResult}\nDS Result: ${dsResult}`); // Show both results
     } catch (error) {
       console.error('There was an error submitting the grades!', error);
+      setResult('An error occurred while checking eligibility.');
     }
   };
 
@@ -58,13 +61,20 @@ function Field() {
             {Object.entries(subjects).map(([key, label]) => (
               <div key={key} className="input-group">
                 <label>{label}</label>
-                <input
-                  type="text"
+                <select
                   name={key}
                   value={grades[key]}
                   onChange={handleInputChange}
-                  placeholder="Grade"
-                />
+                >
+                  <option value="">Select Grade</option>
+                  <option value="A+">A+</option>
+                  <option value="A">A</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B">B</option>
+                  <option value="B-">B-</option>
+                  <option value="C+">C+</option>
+                </select>
               </div>
             ))}
             <button type="button" onClick={handleSubmit} className="submit-btn">
@@ -73,7 +83,7 @@ function Field() {
           </form>
 
           {/* Display the result */}
-          {result && <p className="result-message">{result}</p>}
+          {result && <pre className="result-message">{result}</pre>}
         </div>
       </div>
     </div>
