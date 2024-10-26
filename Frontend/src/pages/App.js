@@ -54,7 +54,13 @@ function App() {
     return <FieldPage onLogout={handleLogout} />;
   }
 
-  // If the user is not logged in, show the login form
+  // Navigate directly to the dashboard (WelcomePage) without login
+  const handleGoToDashboard = () => {
+    setIsLoggedIn(true);
+    setShowFieldPage(false);
+  };
+
+  // If the user is not logged in, show the login form and the "Go to Dashboard" button
   return (
     <div className="login-container">
       <div className="image-section">
@@ -63,29 +69,8 @@ function App() {
       <div className="login-form-section">
         <img src={logo} alt="KnowledgeConnect" className="login-logo" />
         <h1>WELCOME BACK!</h1>
-        <p>Enter your username and password to access your account</p>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Username:</label>
-            <input
-              type="email"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-btn">Sign In</button>
-        </form>
-        {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
+    
+        <button onClick={handleGoToDashboard} className="dashboard-btn">Go to Dashboard</button> {/* New button added */}
       </div>
     </div>
   );

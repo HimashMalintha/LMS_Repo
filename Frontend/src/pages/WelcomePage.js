@@ -39,7 +39,7 @@ function WelcomePage({ onLogout }) {
     <div className="welcome-container">
       <header className="welcome-header">
         <img src={logo} alt="KnowledgeConnect Logo" className="logo" />
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+        <button className="logout-btn" onClick={() => window.location.href = '/'}>Back</button>
       </header>
       <main className="welcome-main">
         <h1>Hello!</h1>
@@ -49,7 +49,7 @@ function WelcomePage({ onLogout }) {
             <h3>Study Group Platform</h3>
           </div>
           <div className="option-card" onClick={handleFieldRecommendation} style={{ cursor: 'pointer' }}>
-            <h3>Field Recommendation</h3>
+            <h3>Specialization Recommendation</h3>
           </div>
         </div>
       </main>

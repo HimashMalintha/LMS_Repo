@@ -5,7 +5,7 @@
 }
 
 .App-header {
-  position: fixed; /* Keeps the header on top */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -15,7 +15,7 @@
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensures header stays on top */
+  z-index: 1000;
 }
 
 .App-logo {
@@ -52,41 +52,51 @@ nav a {
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  gap: 60px; /* Increased gap for a more balanced layout */
+  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 120px; /* Adjusted margin-top to create space under the fixed header */
+  margin-top: 120px;
 }
 
 .image-section {
-  flex: 1; /* Make image section flexible to fill space */
+  flex: 1;
 }
 
 .image-section .student-image {
   width: 100%;
-  max-width: 400px; /* Maintain a max width */
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-section {
-  flex: 1; /* Make form section flexible to fill space */
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .form-section h2 {
   margin-bottom: 30px;
-  font-size: 2rem; /* Slightly increased font size */
+  font-size: 2rem;
   color: #333;
-  text-align: left; /* Align heading with form */
+  text-align: left;
 }
 
 .grades-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two-column layout */
-  gap: 30px; /* Increased gap between form fields */
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  gap: 30px;
+}
+
+.grades-form h3 {
+  grid-column: span 2; /* Span the header across both columns */
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 20px;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
 }
 
 .input-group {
@@ -95,7 +105,7 @@ nav a {
 }
 
 .input-group label {
-  margin-bottom: 10px; /* Added margin below labels for spacing */
+  margin-bottom: 10px;
   font-weight: bold;
   color: #333;
 }
@@ -109,7 +119,7 @@ nav a {
 }
 
 .submit-btn {
-  grid-column: span 2; /* Make the submit button span two columns */
+  grid-column: span 2;
   padding: 15px;
   background-color: black;
   color: white;
@@ -119,7 +129,7 @@ nav a {
   font-size: 1.2rem;
   text-align: center;
   transition: background-color 0.3s ease;
-  margin-top: 20px; /* Added margin above the button */
+  margin-top: 20px;
 }
 
 .submit-btn:hover {
@@ -130,6 +140,12 @@ nav a {
   grid-column: span 2;
   font-size: 1.2rem;
   margin-top: 20px;
-  color: green;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 8px;
   text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
